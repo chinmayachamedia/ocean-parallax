@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Descent — A Journey Through the Ocean's Depths</title>
+<meta name="description" content="Scroll from sunlit surface to the hadal trenches — a parallax journey through every layer of the ocean." />
+
+<!-- Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (depth data) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ SCROLL PROGRESS (top hairline) ============ -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__fill" id="scrollFill"></div>
+  </div>
+
+  <!-- ============ STICKY NAV ============ -->
+  <nav class="nav" id="nav">
+    <a href="#surface" class="nav__brand">DESCENT</a>
+    <ul class="nav__links">
+      <li><a href="#epipelagic" data-nav>Sunlight</a></li>
+      <li><a href="#mesopelagic" data-nav>Twilight</a></li>
+      <li><a href="#bathypelagic" data-nav>Midnight</a></li>
+      <li><a href="#abyssopelagic" data-nav>Abyss</a></li>
+      <li><a href="#hadal" data-nav>Trench</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ SIGNATURE ELEMENT: LIVE DEPTH GAUGE ============ -->
+  <!-- Doubles as the scroll-progress indicator required by the brief -->
+  <aside class="depth-gauge" id="depthGauge" aria-hidden="true">
+    <div class="depth-gauge__track">
+      <div class="depth-gauge__fill" id="depthFill"></div>
+    </div>
+    <div class="depth-gauge__reading">
+      <span class="depth-gauge__meters" id="depthMeters">0</span>
+      <span class="depth-gauge__unit">m</span>
+    </div>
+    <div class="depth-gauge__zone" id="depthZone">Sunlight Zone</div>
+  </aside>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — HERO / SURFACE (0m)
+    ============================================================= -->
+    <section class="zone zone--surface" id="surface">
+      <div class="parallax-layer" data-speed="0.15">
+        <div class="sunrays"></div>
+      </div>
+      <div class="parallax-layer" data-speed="0.35">
+        <div class="wave wave--back"></div>
+      </div>
+      <div class="parallax-layer" data-speed="0.6">
+        <div class="wave wave--front"></div>
+      </div>
+
+      <div class="zone__content fade-in">
+        <p class="eyebrow">0 METERS &middot; THE SURFACE</p>
+        <h1 class="hero__title">Everything you know<br>about the ocean<br>ends at <span class="accent">200 metres.</span></h1>
+        <p class="zone__lede">
+          Below the waterline the light fades fast, the pressure climbs by an
+          atmosphere every ten metres, and the sea keeps almost all of its
+          volume in permanent dark. Scroll to descend, zone by zone, to the
+          bottom of the world.
+        </p>
+        <a href="#epipelagic" class="scroll-cue" data-nav>
+          <span>Begin the descent</span>
+          <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v17M1 12l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — EPIPELAGIC / SUNLIGHT ZONE (0–200m)
+    ============================================================= -->
+    <section class="zone zone--epipelagic" id="epipelagic">
+      <div class="parallax-layer" data-speed="0.2">
+        <div class="particles particles--light"></div>
+      </div>
+      <div class="parallax-layer" data-speed="0.45">
+        <div class="silhouette silhouette--kelp"></div>
+      </div>
+
+      <div class="zone__content">
+        <p class="eyebrow fade-in">0–200M &middot; SUNLIGHT ZONE</p>
+        <h2 class="zone__title fade-in">The epipelagic</h2>
+        <p class="zone__lede fade-in">
+          Enough light reaches here for photosynthesis, so this thin skin of
+          water holds the vast majority of marine life — plankton, tuna,
+          dolphins, and the coral reefs built by animals that farm sunlight
+          for a living. It is the only layer with a visible horizon.
+        </p>
+        <div class="stat-row fade-in">
+          <div class="stat"><span class="stat__num">90%</span><span class="stat__label">of ocean life lives here</span></div>
+          <div class="stat"><span class="stat__num">1 atm</span><span class="stat__label">pressure added per 10m</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — MESOPELAGIC / TWILIGHT ZONE (200–1000m)
+    ============================================================= -->
+    <section class="zone zone--mesopelagic" id="mesopelagic">
+      <div class="parallax-layer" data-speed="0.1">
+        <div class="glow glow--twilight"></div>
+      </div>
+      <div class="parallax-layer" data-speed="0.3">
+        <div class="particles particles--bio"></div>
+      </div>
+      <div class="parallax-layer" data-speed="0.5">
+        <div class="silhouette silhouette--jelly"></div>
+      </div>
+
+      <div class="zone__content">
+        <p class="eyebrow fade-in">200–1,000M &middot; TWILIGHT ZONE</p>
+        <h2 class="zone__title fade-in">The mesopelagic</h2>
+        <p class="zone__lede fade-in">
+          Sunlight thins to a blue-grey gloom and then to nothing. Most
+          animals here make their own light instead of waiting for the sun —
+          roughly nine in ten mesopelagic species are bioluminescent, using
+          flashes to hunt, hide, and speak.
+        </p>
+        <div class="stat-row fade-in">
+          <div class="stat"><span class="stat__num">~1%</span><span class="stat__label">of surface light remains at 200m</span></div>
+          <div class="stat"><span class="stat__num">90%</span><span class="stat__label">of species here glow in the dark</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — BATHYPELAGIC / MIDNIGHT ZONE (1000–4000m)
+    ============================================================= -->
+    <section class="zone zone--bathypelagic" id="bathypelagic">
+      <div class="parallax-layer" data-speed="0.15">
+        <div class="particles particles--sparse"></div>
+      </div>
+      <div class="parallax-layer" data-speed="0.4">
+        <div class="silhouette silhouette--angler"></div>
+      </div>
+
+      <div class="zone__content">
+        <p class="eyebrow fade-in">1,000–4,000M &middot; MIDNIGHT ZONE</p>
+        <h2 class="zone__title fade-in">The bathypelagic</h2>
+        <p class="zone__lede fade-in">
+          No sunlight has ever reached this deep. The water sits near
+          freezing, pressure exceeds 400 atmospheres, and food arrives only
+          as "marine snow" drifting down from above. Animals here are built
+          to wait, not chase.
+        </p>
+        <div class="stat-row fade-in">
+          <div class="stat"><span class="stat__num">4&deg;C</span><span class="stat__label">near-constant temperature</span></div>
+          <div class="stat"><span class="stat__num">400+ atm</span><span class="stat__label">of crushing pressure</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — ABYSSOPELAGIC / ABYSS (4000–6000m)
+    ============================================================= -->
+    <section class="zone zone--abyssopelagic" id="abyssopelagic">
+      <div class="parallax-layer" data-speed="0.1">
+        <div class="terrain terrain--abyss"></div>
+      </div>
+      <div class="parallax-layer" data-speed="0.35">
+        <div class="silhouette silhouette--vent"></div>
+      </div>
+
+      <div class="zone__content">
+        <p class="eyebrow fade-in">4,000–6,000M &middot; ABYSSAL ZONE</p>
+        <h2 class="zone__title fade-in">The abyssopelagic</h2>
+        <p class="zone__lede fade-in">
+          This is the ocean floor for most of the planet — flat sediment
+          plains broken by the occasional hydrothermal vent, where life runs
+          on chemistry pulled from the earth instead of energy from the sun.
+        </p>
+        <div class="stat-row fade-in">
+          <div class="stat"><span class="stat__num">76%</span><span class="stat__label">of the seafloor sits at this depth</span></div>
+          <div class="stat"><span class="stat__num">0</span><span class="stat__label">photons of sunlight, ever</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — HADAL ZONE / TRENCHES (6000–11000m) — closing
+    ============================================================= -->
+    <section class="zone zone--hadal" id="hadal">
+      <div class="parallax-layer" data-speed="0.1">
+        <div class="terrain terrain--trench"></div>
+      </div>
+
+      <div class="zone__content">
+        <p class="eyebrow fade-in">6,000–11,000M &middot; HADAL ZONE</p>
+        <h2 class="zone__title fade-in">The trenches</h2>
+        <p class="zone__lede fade-in">
+          Named for Hades, these narrow trenches are the deepest scars on
+          Earth's surface. The Mariana Trench alone could swallow Everest
+          with two kilometres of water left over — and still, something
+          lives down there.
+        </p>
+        <a href="#surface" class="scroll-cue scroll-cue--up fade-in" data-nav>
+          <span>Back to the surface</span>
+        </a>
+        <footer class="footer">
+          <p>Built as a parallax scrolling study &middot; HTML, CSS &amp; vanilla JS &middot; no image assets, no libraries.</p>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
